@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+</head>
+
+<body>
+
+  <div id="container">
+
+  </div>
+
+
+
+  <script>
+    var outermostDiv = document.getElementById('container')
+    var ourNav = document.createElement('nav')
+    ourNav.style = "background-color: lightblue; color: white; font-size: 30px;"
+
+    ourNav.textContent = 'HighOnCoding'
+    outermostDiv.appendChild(ourNav)
+
+
+    var secondDiv = document.createElement('div')
+    secondDiv.style = "background-color: lightgray;"
+    var headerInSecondDiv = document.createElement('h1')
+    headerInSecondDiv.textContent = "Curse of the Current Reviews"
+    secondDiv.appendChild(headerInSecondDiv)
+    var textInSecondDiv = document.createElement('p')
+    textInSecondDiv.textContent = "When you want to buy any application from the apple itunes store you have more choices than you can handle. Most of the users scroll past the application description completely avoiding it like ads displayed on the right column of your webpage. Their choice is dependent on three important factors, price, screenshot, and reviews."
+    secondDiv.appendChild(textInSecondDiv)
+    outermostDiv.appendChild(secondDiv)
+
+    var thirdDiv = document.createElement('div')
+    var headerInThirdDiv = document.createElement('p')
+    headerInThirdDiv.textContent = "Hello WatchKit"
+    headerInThirdDiv.style = "color: blue; font-size: 36px;"
+    thirdDiv.appendChild(headerInThirdDiv)
+    var textInThirdDiv = document.createElement('p')
+    textInThirdDiv.textContent = "Last month apple released the anticipaed WatchKit Framework for developers in the form of iOS 8.2 beta SDK release. The WatchKit framework enables the developers to create apple watch applications. In this article, we are going to focus on the basics of getting started with the WatchKit framework and developing apps for the apple watch."
+    thirdDiv.appendChild(textInThirdDiv)
+    var footerInThirdDiv = document.createElement('div')
+    footerInThirdDiv.style = "background-color: orange; color: white"
+    footerInThirdDiv.textContent = "12 comments 124 likes"
+    thirdDiv.appendChild(footerInThirdDiv)
+    outermostDiv.appendChild(thirdDiv)
+
+
+    var lastDiv = document.createElement('div')
+    var headerInLastDiv = document.createElement('p')
+    headerInLastDiv.textContent = "Introduction to Swift"
+    headerInLastDiv.style = "color: blue; font-size: 36px;"
+    lastDiv.appendChild(headerInLastDiv)
+    var textInLastDiv = document.createElement('p')
+    textInLastDiv.textContent = "Swift is a modern programming language developed by apple to create the next generation of iOS and OSX applications. Swift is a fairly new language and still in development but it clearly reflects the intentions and the future direction. This article will revolve around the basic concepts in the Swift language and how you can get started."
+    lastDiv.appendChild(textInLastDiv)
+    var footerInLastDiv = document.createElement('div')
+    footerInLastDiv.style = "background-color: orange; color: white;"
+    footerInLastDiv.textContent = "15 comments 45 likes"
+    lastDiv.appendChild(footerInLastDiv)
+    outermostDiv.appendChild(lastDiv)
+
+  </script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

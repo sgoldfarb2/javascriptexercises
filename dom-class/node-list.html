@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Node List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div id="page">
+    <h1 id="header">List</h1>
+    <h2>Buy groceries</h2>
+    <ul>
+      <li id="one" class="hot"><em>fresh</em> figs</li>
+      <li id="two" class="hot">pine nuts</li>
+      <li id="three" class="hot">honey</li>
+      <li id="four">balsamic vinegar</li>
+    </ul>
+  </div>
+
+
+  <script>
+
+    var li = document.getElementsByTagName('li')[0]
+    console.log(li)
+    var child = li.childNodes[0]
+    console.log(child)
+    console.log(li.firstChild)
+
+    // var ul = document.getElementsByTagName('ul')[0]
+    // console.log(ul)
+
+    // var firstChild = ul.childNodes[0]
+    // console.log(firstChild)
+  </script>
+</body>
+
+</html>
