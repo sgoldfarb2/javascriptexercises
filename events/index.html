@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Events</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <ul>
+    <li><img src="images/ylw.gif" alt="yellow" id="yellow"></li>
+    <li><img src="images/org.gif" alt="orange" id="orange"></li>
+    <li><img src="images/ppl.gif" alt="purple" id="purple"></li>
+    <li><img src="images/blu.gif" alt="blue" id="blue"></li>
+    <li><img src="images/pnk.gif" alt="pink" id="pink" onclick="pinkBox()"></li>
+    <li><img src="images/grn.gif" alt="green" id="green"></li>
+    <li><img src="images/ygr.gif" alt="ygreen" id="ygreen"></li>
+    <li><img src="images/gry.gif" alt="gray" id="gray"></li>
+    <li><img src="images/red.gif" alt="red" id="red"></li>
+  </ul>
+
+
+
+
+
+  <script>
+    // var li = document.getElementById('yellow');
+    // li.onmouseover = function () {
+    //   console.log('Hello everyone!!!!!!!')
+    // }
+
+    // function pinkBox() {
+    //   alert('pink box clicked!')
+    // }
+
+
+
+    //now we are going to use our addEventListeners()
+    // var li = document.getElementById('yellow');
+    var ul = document.querySelector('ul')
+    ul.addEventListener('click', function (event) {
+      console.log(event.target.alt)
+
+      switch (event.target.id) {
+        case 'pink':
+          console.log('pink')
+          break;
+        case 'orange':
+          console.log('orange')
+          break;
+        default:
+          break;
+      }
+    }, false)
+    // li.addEventListener('click', function () {
+    //   alert('yellow box clicked!')
+    // }, false)
+  </script>
+
+</body>
+
+</html>

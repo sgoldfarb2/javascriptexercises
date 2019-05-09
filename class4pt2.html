@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+
+  <style>
+    body {
+      height: 200px;
+      background: beige;
+    }
+
+    .dot {
+      height: 8px;
+      width: 8px;
+      border-radius: 4px;
+      background-color: blue;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <!--#1-->
+  <!-- <div id="result">
+
+
+  </div> -->
+  <!--#1 END-->
+
+  <!--#2-->
+  <!-- <button>A</button>
+  <button>B</button>
+  <button>C</button> -->
+  <!--#2 END-->
+
+  <!--#3-->
+  <!-- <a href="www.digitalcrafts.com">DC</a> -->
+  <!--#3 END-->
+</body>
+<script>
+  //#1
+  // window.addEventListener('click', function (event) {
+  //   document.querySelector('#result').textContent = "You knocked?"
+
+  // }, false)
+  //#1 END
+
+
+  //#2
+  // document.body.addEventListener('click', function (event) {
+  //   if (event.target.nodeName === 'BUTTON') {
+  //     console.log(`Clicked ${event.target.textContent}`)
+  //   }
+  // }, false)
+  //#2 END
+
+
+  //#3
+  // var link = document.querySelector('a')
+  // link.eventListener('click', function (event) {
+  //   event.preventDefault()
+  //   console.log('hey')
+
+  // }, false)
+  //#3 END
+
+  //#4
+  // window.addEventListener('keydown', function (event) {
+  //   console.log(event)
+  //   if (event.key === 'v') {
+  //     document.body.style.backgroundColor = "violet"
+  //   }
+  // }, false)
+
+
+
+  // window.addEventListener('keyup', function (event) {
+  //   if (event.key === 'v') {
+  //     document.body.style.backgroundColor = ""
+  //   }
+  // }, false)
+  //#4 END
+
+  //#5
+  window.addEventListener('click', function (ourEvent) {
+    let dot = document.createElement('div')
+    dot.className = 'dot'
+    dot.style.left = (ourEvent.pageX - 4) + "px";
+    dot.style.top = (ourEvent.pageY - 4) + "px";
+
+    document.body.appendChild(dot)
+  }, false)
+</script>
+</body>
+
+</html>
