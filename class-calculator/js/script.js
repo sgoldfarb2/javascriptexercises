@@ -9,58 +9,27 @@ const input = document.getElementById('input'), // input/output button
 let resultDisplayed = false; // flag to keep an eye on what output is displayed
 
 let answer = 0;
+let nums = []
 let ourNumbers = []
 let ourOperands = []
 
 
 // adding click handlers to number buttons
-
-var calcInput = document.body.addEventListener('click', function (event) {
+var leftPanel = document.querySelector('.leftPanel')
+leftPanel.addEventListener('click', function (event) {
     let ourInput = event.target.textContent
-    switch (ourInput) {
-        case '1':
-            ourNumbers.push(parseFloat(ourInput))
-            input.innerText = 1
-            break;
-        case '2':
-            ourNumbers.push(parseFloat(ourInput))
-            input.innerText = 2
-            break;
-        case '3':
-            ourNumbers.push(parseFloat(ourInput))
-            input.innerText = 3
-            break;
-        case '4':
-            ourNumbers.push(parseFloat(ourInput))
-            input.innerText = 4
-            break;
-        case '5':
-            ourNumbers.push(parseFloat(ourInput))
-            input.innerText = 5
-            break;
-        case '6':
-            ourNumbers.push(parseFloat(ourInput))
-            input.innerText = 6
-            break;
-        case '7':
-            ourNumbers.push(parseFloat(ourInput))
-            input.innerText = 7
-            break;
-        case '8':
-            ourNumbers.push(parseFloat(ourInput))
-            input.innerText = 8
-            break;
-        case '9':
-            ourNumbers.push(parseInt(ourInput))
-            input.innerText = 9
-            break;
-        case '0':
-            input.innerText = 0
-        default:
-            break;
+    if (ourInput === "C") {
+        answer = 0
+        nums = []
+        ourNumbers = []
+        ourOperands = []
+    } else {
+        nums.push(ourInput)
+        input.textContent = nums.join('')
+        console.log(nums)
     }
-    console.log(ourNumbers)
 }, false)
+
 
 
 // adding click handlers to the operation buttons
@@ -68,73 +37,82 @@ var operators = document.querySelector('.operators')
 operators.addEventListener('click', function (event) {
     console.log(event.target.innerText)
     if (event.target.innerText === '+') {
-        // answer = ourNumbers.reduce(function (acc, currentElement) {
-        //     return acc + currentElement
 
-        // })
+        ourNumbers.push(parseFloat(nums.join('')))
+        nums = []
+
         ourOperands.push('+')
         input.innerText = '+'
-        // return answer
+
 
     } else if (event.target.innerText === '-') {
-        // for (let i = 0; i < ourNumbers.length; i++) {
-        //     answer = ourNumbers[i] - ourNumbers[i + 1]
-        //     input.innerText = '-'
 
-        //     return answer
-        // }
+        ourNumbers.push(parseFloat(nums.join('')))
+        nums = []
+
         input.innerText = '-'
         ourOperands.push('-')
 
     } else if (event.target.innerText === '×') {
-        // for (let i = 0; i < ourNumbers.length; i++) {
-        //     answer = ourNumbers[i] * ourNumbers[i + 1]
-        //     input.innerText = 'x'
-        //     return answer
-        // }
+
+        ourNumbers.push(parseFloat(nums.join('')))
+        nums = []
+
         input.innerText = '×'
         ourOperands.push('×')
     } else if (event.target.innerText === '÷') {
-        // for (let i = 0; i < ourNumbers.length; i++) {
-        //     answer = ourNumbers[i] / ourNumbers[i + 1]
-        //     input.innerText = '÷'
-        //     return answer
-        // }
+
+        ourNumbers.push(parseFloat(nums.join('')))
+        nums = []
+
         input.innerText = '÷'
         ourOperands.push('÷')
 
     }
-    console.log(ourOperands)
+
 }, false)
-// operators.addEventListener()
+
 
 // on click of 'equal' button
 result.addEventListener('click', function () {
     if (ourOperands[0] === '+') {
+        ourNumbers.push(parseFloat(nums.join('')))
+        nums = []
         answer = ourNumbers.reduce(function (acc, currentElement) {
             return acc + currentElement
         })
         input.innerText = answer
+        ourNumbers = []
         return answer
     } else if (ourOperands[0] === '-') {
+        ourNumbers.push(parseFloat(nums.join('')))
+        nums = []
         for (let i = 0; i < ourNumbers.length; i++) {
             answer = ourNumbers[i] - ourNumbers[i + 1]
             input.innerText = answer
+            // ourNumbers = []
             return answer
         }
     } else if (ourOperands[0] === '×') {
+        ourNumbers.push(parseFloat(nums.join('')))
+        nums = []
         for (let i = 0; i < ourNumbers.length; i++) {
             answer = ourNumbers[i] * ourNumbers[i + 1]
             input.innerText = answer
+            ourNumbers = []
             return answer
         }
     } else if (ourOperands[0] === '÷') {
+        ourNumbers.push(parseFloat(nums.join('')))
+        nums = []
         for (let i = 0; i < ourNumbers.length; i++) {
             answer = ourNumbers[i] / ourNumbers[i + 1]
             input.innerText = answer
+            ourNumbers = []
             return answer
         }
     }
+
 }, false)
 
 // clearing the input on press of clear
