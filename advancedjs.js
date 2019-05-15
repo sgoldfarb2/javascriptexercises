@@ -61,3 +61,9 @@
 //Classes
 //see notes from fullstack foundations class!
 
+
+
+
+//Closures
+//
+
