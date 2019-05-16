@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <form onsubmit="myFunction()" action="mailto:s.goldfarb2@gmail.com" method="get">
+
+
+    <!--fieldset gives a little styling to your form-->
+    <fieldset>
+      <legend>Personal Info</legend>
+      <input type="text" id="name" name="name" placeholder="name" required pattern="Sabrina|Michael">
+      <input type="radio" name="isActive">
+      <input type="checkbox" name="isPresent">
+      <input type="password" placeholder="password" name="password" required minlength="4">
+      <input type="email" placeholder="email" id="email">
+      <button type="submit">Submit</button>
+    </fieldset>
+
+  </form>
+
+
+
+
+
+  <script src="http://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+
+
+  <script>
+
+
+    // let myFunction = () => {
+    //   alert('form submitted!')
+    // }
+
+
+
+
+
+    // let email = document.getElementById('email')
+
+    // email.addEventListener('input', (event) => {
+    //   if (email.validity.typeMismatch) {
+    //     email.setCustomValidity('Nice try jerk, enter a real email!')
+    //   } else {
+    //     email.setCustomValidity('')
+    //   }
+    // })
+
+
+
+    //this function loads in jQuery
+    // $(function () {
+
+    //   $('form').submit(function () {
+    //     alert('form submitted')
+    //     let $name = $('#name').val()
+    //     console.log($name)
+    //   })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    })
+  </script>
+</body>
+
+</html>
