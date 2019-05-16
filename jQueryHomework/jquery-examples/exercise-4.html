@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    /*
+    When the clear button is clicked, clear the text field.
+    When the save button is clicked, take the text value inside the text field, and append a new <li> element to the #log with the entered text value.
+    HINT: lookup .val()
+    */
+    $(function () {
+      // write your code here
+
+      $('#clear-button').on('click', function (event) {
+        $('#text-field').val('')
+      })
+
+      $('#save-button').on('click', function (event) {
+        let $li = $('<li>')
+        $li.html($('#text-field').val())
+        $('#log').append($li)
+      })
+
+
+    });
+  </script>
+</head>
+
+<body>
+  <input id="text-field" type="text" name="text">
+  <button id="clear-button">Clear</button>
+  <button id="save-button">Save</button>
+  <ul id="log">
+    <li>Type messages here:</li>
+  </ul>
+</body>
+
+</html>
