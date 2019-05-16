@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+
+  <style>
+    header {
+      background-color: pink;
+      height: 300px;
+      width: 100%;
+    }
+
+
+    .mainStyle {
+      background-color: greenyellow;
+    }
+
+
+    .myAnchor {
+      color: red;
+
+    }
+
+    .active {
+      background-color: yellow;
+    }
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <h1>Digital Crafts</h1>
+    <h2>Coding Camp</h2>
+    <img id="puppies" src="" alt="puppies" class="myAnchor">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit praesentium alias inventore animi iste
+      totam dolorem minus libero tempora saepe aut dolores non officiis est expedita ipsam impedit, odit exercitationem.
+    </p>
+  </header>
+  <main>
+
+    <p class="mainStyle">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia porro ipsa, tempore consequatur voluptatem
+      tempora nesciunt molestiae libero beatae maiores impedit minima quasi quam totam. Ex ducimus aliquid labore nam.
+    </p>
+    <p data-anthony="hello"></p>
+    <p id="mainStyle"></p>
+    <div class="active"></div>
+
+
+    <button id="the-button">Click Me!</button>
+    <a href="" class="myAnchor">myAnchor</a>
+
+
+
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+
+    <button id="secondbutton">Click me too!</button>
+  </main>
+
+  <script src="http://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+  <script>
+    // $(document).ready(function(){
+
+    //   //jquery code
+    // })
+
+
+    //below and above do the same thing, the below is just newer
+    $(function () {
+      //all of these are JS ways we can grab (an) element(s)
+      // document.getElementById('puppies')
+      //using jQuery
+      // $('#puppies')
+
+      // document.querySelector('#puppies')
+
+      // document.querySelectorAll('.mainStyle')
+      //using jQuery
+      // $(.mainStyle)
+
+      // document.getElementsByTagName('p')
+      // document.querySelectorAll('p')
+      //using jQuery
+      // $('p')
+
+      //you want to name your variable with a $ so everyone knows you're using jQuery
+      // let $result = $('p')
+      //jQuery will always return an array of our tags, even if there is only one tag (because you're catching an ID)
+
+
+
+      //we can make our own attributes and retrieve them using jQuery
+      // let $a = $('[data-anthony]')
+      // console.log($a)
+
+
+      let $p = $('#mainStyle').html('Hello world')
+
+      //the second element that jQuery takes is an object where we can create attributes
+      let $anchor = $('<a>', {
+        'class': 'myAnchor',
+        'text': 'this is our anchor tag',
+        'target': '_blank',
+        'href': 'www.yahoo.com'
+      })
+
+      $p.append($anchor)
+      $anchor.addClass('active')
+
+
+      //   $('#the-button').click((event) => {
+      //     alert('Nice to meet you!')
+
+      //   })
+
+
+      //the on method attaches event handlers to the currently selected set of elements in the jQuery object
+      $('#the-button').on('click', (e) => {
+        alert('Nice to meet you!')
+
+      })
+
+
+      //go back to this, we want to filter to only pop up on our a tags, but not currently working
+      $('.myAnchor').on('click', (e) => {
+        alert('Digital Crafts Rules!')
+        //this prevent default will stop our anchor from sending us away
+        e.preventDefault()
+      })
+
+
+      //key down
+      $('textarea').keydown((e) => {
+        console.log(`Key down: ${e.keyCode}`)
+      })
+
+      //key up
+      $('textarea').keyup((e) => {
+        console.log(`Key up: ${e.keyCode}`)
+      })
+
+
+
+      //basic effects
+      $('#secondbutton').on('click', (e) => {
+        // $('textarea').hide()
+        // $('main').fadeOut()
+        $('main').slideUp()
+        // $('main').toggle()
+      })
+
+
+
+
+
+
+    })
+  </script>
+</body>
+
+</html>
